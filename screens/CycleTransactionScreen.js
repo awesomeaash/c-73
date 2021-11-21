@@ -57,22 +57,22 @@ export default class TransactionScreen extends React.Component {
 
   initiateCycleIssue = async () => {
    
-     db.collection("transactions").add({
+    // db.collection("transactions").add({
     //   studentId: this.state
     //   cycleId: this.state.scannedCycleId,
     //   date: firebase.firestore,
     //   transactionType: "Issue"
     // });
 
-    // db.collection("transactions").add({
-    //   studentId: this.state.scannedStudentId
+     db.collection("transactions").add({
+     studentId: this.state.scannedStudentId
      cycleId: this.state.scannedCycleId
-    //   date: firebase.firestore.Timestamp.now().toDate()
-    //   transactionType: "Issue"
-    // });
+     date: firebase.firestore.Timestamp.now().toDate()
+     transactionType: "Issue"
+     });
 
     // db.collection("transactions").add({
-      studentId: this.state.scannedStudentId,
+    //  studentId: this.state.scannedStudentId,
     //  cycleId: this.state.scannedCycleId,
    // date: firebase.firestore.Timestamp.now().toDate(),
        //transactionType: "Issue"
@@ -82,8 +82,8 @@ export default class TransactionScreen extends React.Component {
     //   studentId: this.state.scannedStudentId;
     //   cycleId: this.state.scannedCycleId;
      // date: firebase.firestore.Timestamp.now().toDate();
-      transactionType: "Issue";
-     });
+    //  transactionType: "Issue";
+   //  });
   
    var cycleissue = db.collection("cycle")
    cycleissue.where("cycleId","==", this.state.scannedCycleId).get()
